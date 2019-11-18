@@ -1,4 +1,4 @@
-package com.example.myapplication.models;
+package com.example.Elotero.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1067878617551",
+    "firebase_url": "https://elotero-d082d.firebaseio.com",
+    "project_id": "elotero-d082d",
+    "storage_bucket": "elotero-d082d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067878617551:android:1d84067720cd8ab4d6c2ba",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067878617551-ebu136sjacsphqr0j26fus336uqugvbd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALUbhguPWy1SQGqfookvXrHnmEJuO-Va0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067878617551-ebu136sjacsphqr0j26fus336uqugvbd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1067878617551-md1ihq9et0vtcc042fdg3hfd2stlvh2i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Elotero"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
