@@ -19,33 +19,4 @@ public class RegisterScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_screen);
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build());
-
-
-
-        Button auth_button = (Button)findViewById(R.id.authButton);
-        auth_button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                startActivityForResult(
-                        AuthUI.getInstance()
-                                .createSignInIntentBuilder()
-                                .setAvailableProviders(providers)
-                                .build(),
-                        Globals.RC_SIGN_IN);
-            }
-        });
-
-
-
-
-
-
-    }
 }
