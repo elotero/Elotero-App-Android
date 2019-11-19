@@ -2,4 +2,6 @@
     <string name="app_name">Elotero</string>
     <string name="registerBtn">Register</string>
     <string name="vendorName">Vendor Cart Name</string>
+    <string name="facebook_application_id" translatable="false">586692858739110</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb586692858739110</string>
 </resources>
