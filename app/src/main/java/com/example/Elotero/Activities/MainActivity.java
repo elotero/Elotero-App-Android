@@ -10,10 +10,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.Elotero.R;
+import com.example.Elotero.Utils.Globals;
 import com.firebase.ui.auth.AuthUI;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
