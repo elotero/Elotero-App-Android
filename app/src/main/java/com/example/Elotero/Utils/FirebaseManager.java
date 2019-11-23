@@ -15,7 +15,8 @@ public class FirebaseManager {
 
     private DatabaseReference dbRef;
     public FirebaseManager(){
-        dbRef = FirebaseDatabase.getInstance().getReference();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        dbRef = database.getReference();
     }
 
     public void addVendor(Vendor vendor) throws JSONException {

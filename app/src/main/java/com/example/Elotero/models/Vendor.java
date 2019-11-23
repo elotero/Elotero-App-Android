@@ -4,6 +4,54 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Vendor {
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getVendorCartName() {
+        return vendorCartName;
+    }
+
+    public void setVendorCartName(String vendorCartName) {
+        this.vendorCartName = vendorCartName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     private String uid;
     private String firstName;
     private String lastName;
@@ -52,9 +100,5 @@ public class Vendor {
         } else {
             value = jsonObject.getString(field);
         }
-    }
-
-    public void setUid(String uid){
-        this.uid = uid;
     }
 }
