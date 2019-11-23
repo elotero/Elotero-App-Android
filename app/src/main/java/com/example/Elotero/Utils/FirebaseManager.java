@@ -7,12 +7,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
-
 public class FirebaseManager {
-
     private DatabaseReference dbRef;
     public FirebaseManager(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -20,8 +15,10 @@ public class FirebaseManager {
     }
 
     public void addVendor(Vendor vendor) throws JSONException {
+        dbRef = FirebaseDatabase.getInstance().getReference("vendors");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        dbRef.child("vendors").child(user.getUid()).setValue(vendor);
+        vendor.setUid(user.getUid());
+        dbRef.setValue(vendor);
     }
     public void removeVendor(Vendor vendor){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

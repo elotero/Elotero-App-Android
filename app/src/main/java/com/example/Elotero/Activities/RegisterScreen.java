@@ -46,7 +46,7 @@ public class RegisterScreen extends AppCompatActivity {
                         vendorInfo.put(Globals.uid, uid);
                         Vendor vendor = new Vendor(vendorInfo);
                         dbManager.addVendor(vendor);
-                        startActivity(intent);
+                        //startActivity(intent);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

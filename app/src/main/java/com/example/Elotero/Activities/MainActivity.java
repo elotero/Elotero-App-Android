@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         AuthUI.getInstance()
                                 .createSignInIntentBuilder()
                                 .setAvailableProviders(providers)
+                                .setIsSmartLockEnabled(false)
                                 .build(),
                         Globals.RC_SIGN_IN);
             }
