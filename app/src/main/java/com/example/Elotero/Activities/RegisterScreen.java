@@ -32,29 +32,24 @@ public class RegisterScreen extends AppCompatActivity {
         super.onStart();
 
         FirebaseManager dbManager = new FirebaseManager();
-        JSONObject vendorInfo;
-        try {
-             vendorInfo = convertViewsToStrings();
-
-            Button RegisterButton = (Button)findViewById(R.id.authButton);
-            RegisterButton.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    Intent intent = new Intent(RegisterScreen.this, MapsActivity.class);
-                    String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    try {
-                        vendorInfo.put(Globals.uid, uid);
-                        Vendor vendor = new Vendor(vendorInfo);
-                        dbManager.addVendor(vendor);
-                        //startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+        Button RegisterButton = (Button)findViewById(R.id.authButton);
+        RegisterButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(RegisterScreen.this, MapsActivity.class);
+                String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                try {
+                    JSONObject vendorInfo = convertViewsToStrings();
+                    System.out.println("vendor info: " + vendorInfo);
+                    vendorInfo.put(Globals.uid, uid);
+                    Vendor vendor = new Vendor(vendorInfo);
+                    dbManager.addVendor(vendor);
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            });
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+            }
+        });
     }
 
     public JSONObject convertViewsToStrings() throws JSONException {
@@ -77,7 +72,6 @@ public class RegisterScreen extends AppCompatActivity {
         vendorInfo.put(Globals.email, str_email);
         vendorInfo.put(Globals.phone, str_phone);
         vendorInfo.put(Globals.vendorCartName, str_vendorCartName);
-
         return vendorInfo;
     }
 }

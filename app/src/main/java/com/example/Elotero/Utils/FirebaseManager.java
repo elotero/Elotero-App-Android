@@ -18,7 +18,7 @@ public class FirebaseManager {
         dbRef = FirebaseDatabase.getInstance().getReference("vendors");
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         vendor.setUid(user.getUid());
-        dbRef.setValue(vendor);
+        dbRef.child(vendor.getUid()).setValue(vendor);
     }
     public void removeVendor(Vendor vendor){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

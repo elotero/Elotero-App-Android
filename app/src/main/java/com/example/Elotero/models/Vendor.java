@@ -73,11 +73,11 @@ public class Vendor {
 
     public Vendor(JSONObject vendorInfo) throws JSONException {
         try{
-            checkNull(vendorInfo, "uid", this.uid);
-            checkNull(vendorInfo, "firstName", this.firstName);
-            checkNull(vendorInfo, "lastName", this.lastName);
-            checkNull(vendorInfo, "email", this.email);
-            checkNull(vendorInfo, "phone", this.phone);
+            this.email = vendorInfo.getString("email");
+            this.phone = vendorInfo.getString("phone");
+            this.firstName = vendorInfo.getString("firstName");
+            this.lastName = vendorInfo.getString("lastName");
+            this.vendorCartName = vendorInfo.getString("vendorCartName");
         } catch (JSONException e){
             e.printStackTrace();
         }
@@ -94,11 +94,13 @@ public class Vendor {
         return jo;
     }
 
-    public void checkNull(JSONObject jsonObject, String field, String value) throws JSONException {
-        if(jsonObject.isNull(field)){
-            value = "";
-        } else {
-            value = jsonObject.getString(field);
-        }
+    public void addFields(JSONObject jsonObject, String field, String value) throws JSONException {
+        value = jsonObject.getString("field");
+    }
+
+    public String toString(){
+          return  this.uid + "\r\n" + this.firstName + "\r\n" + this.lastName + "\r\n" +
+                        this.vendorCartName + "\r\n" + this.email  + "\r\n" +
+                        this.phone + "\r\n";
     }
 }
